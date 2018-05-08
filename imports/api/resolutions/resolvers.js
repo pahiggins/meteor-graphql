@@ -1,16 +1,25 @@
 import Resolutions from './Resolutions';
+import Goals from '../goals/Goals';
 
 export default {
   Query: {
-    resolutions() {
-      return Resolutions.find({}).fetch();
+    resolutions(obj, args, { userId }) {
+      return Resolutions.find({
+        userId
+      }).fetch();
     }
   },
-
+  Resolution: {
+    goals: resolution => 
+      Goals.find({
+        resolutionId: resolution._id
+      }).fetch()
+  },
   Mutation: {
-    createResolution(obj, {name}, context) {
+    createResolution(obj, { name }, { userId }) {
       const resolutionId = Resolutions.insert({
-        name
+        name,
+        userId
       });
       return Resolutions.findOne(resolutionId);
     }
