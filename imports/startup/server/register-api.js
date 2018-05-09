@@ -8,7 +8,7 @@ import UsersSchema from '../../api/users/User.graphql';
 import UsersResolvers from '../../api/users/resolvers';
 import GoalsSchema from '../../api/goals/Goal.graphql';
 import GoalsResolvers from '../../api/goals/resolvers';
-// hhhhhhhhffgffh
+// hhhhhhhhffgfd
 
 const typeDefs = [
   ResolutionsSchema,
