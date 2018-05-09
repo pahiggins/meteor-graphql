@@ -16,6 +16,8 @@ class ResolutionForm extends Component {
       variables: {
         name: this.name.value
       }
+    }).then(() => {
+      this.name.value = '';
     }).catch(error => {
       console.log(error);
     });
